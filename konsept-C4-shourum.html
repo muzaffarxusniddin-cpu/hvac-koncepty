@@ -129,6 +129,16 @@ h1 mark{background:none;color:var(--red)}
 #sys .lab text{fill:rgba(233,229,220,.74);font-family:'HVAC Mono',monospace;font-size:19px;
  letter-spacing:.06em;text-transform:uppercase}
 #sys .rd text{font-family:'HVAC Mono',monospace;font-size:20px;font-weight:700}
+#sys .tb rect{fill:rgba(10,18,30,.92);stroke:#2C4F7C;stroke-width:1.2}
+#sys .tb text{font-family:'HVAC Mono',monospace;font-size:17px;font-weight:700;
+ text-anchor:middle;fill:var(--paper)}
+#sys .tb-hot text{fill:#FF8A6A}#sys .tb-cold text{fill:#7FB2E0}#sys .tb-warm text{fill:#D9A06B}
+#sys .moden text{font-family:'HVAC Mono',monospace;font-size:15px;letter-spacing:.18em;
+ fill:rgba(233,229,220,.74)}
+#sys #modedot{fill:var(--red);animation:mpulse 2s ease-in-out infinite}
+@keyframes mpulse{0%,100%{opacity:1}50%{opacity:.25}}
+#sys .sg circle,#sys .sg rect{stroke:var(--steel);stroke-width:1.6;fill:#0A121E}
+#sys .mix .d{fill:#0A121E}
 #sys .t-hot{fill:#FF8A70}#sys .t-cold{fill:#7FB4E4}
 .leg{display:none}
 /* ── объекты: сетка карточек ─────────────────────────────────────────────
@@ -412,64 +422,87 @@ h1 mark{background:none;color:var(--red)}
     <div class="cap"><span>Система отопления · принципиальная схема</span>
       <em><i></i>контур в работе</em></div>
     
-<svg id="sys" viewBox="0 0 900 470" fill="none" xmlns="http://www.w3.org/2000/svg"
-     role="img" aria-label="Принципиальная схема системы отопления: котёл, циркуляционный насос, распределительный коллектор, радиаторы, контур тёплого пола и расширительный бак">
- <defs>
-  <linearGradient id="gFloor" x1="0" y1="0" x2="0" y2="1">
-   <stop offset="0%" stop-color="#FF6A4D"/><stop offset="100%" stop-color="#C98B6A"/>
-  </linearGradient>
- </defs>
-
+<svg id="sys" viewBox="0 0 940 560" fill="none" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-label="Принципиальная схема котельной: котёл, группа безопасности, гидрострелка, насос радиаторного контура, радиаторы, узел смешения тёплого пола с насосом и подмесом, расширительный бак">
  <g class="ticks">
-  <path d="M40 40 h22 M40 40 v22"/><path d="M860 40 h-22 M860 40 v22"/>
-  <path d="M40 430 h22 M40 430 v-22"/><path d="M860 430 h-22 M860 430 v-22"/>
+  <path d="M40 40 h22 M40 40 v22"/><path d="M900 40 h-22 M900 40 v22"/>
+  <path d="M40 530 h22 M40 530 v-22"/><path d="M900 530 h-22 M900 530 v-22"/>
  </g>
 
- <path class="pipe" d="M 150 180 L 150 140 L 480 140 L 480 108"/>
- <path class="pipe" d="M 596 97 L 700 97 L 700 204 L 754 204"/>
- <path class="pipe" d="M 754 234 L 700 234 L 700 420 L 150 420 L 150 300"/>
- <path class="pipe" d="M 540 108 L 540 330 L 500 330 L 500 370 L 460 370 L 460 330 L 420 330 L 420 370 L 380 370 L 380 330 L 340 330 L 340 420"/>
- <path class="pipe" d="M 647 420 L 647 404"/>
+ <path class="pipe" d="M 136 210 L 136 150 L 330 150"/>
+ <path class="pipe" d="M 330 300 L 250 300 L 250 260 L 184 260"/>
+ <path class="pipe" d="M 364 150 L 800 150 L 800 210"/>
+ <path class="pipe" d="M 440 150 L 440 234"/>
+ <path class="pipe" d="M 440 266 L 440 410 L 500 410 L 500 370 L 560 370 L 560 410 L 620 410 L 620 370 L 660 370"/>
+ <path class="pipe" d="M 660 370 L 660 250 L 454 250"/>
+ <path class="pipe" d="M 660 340 L 700 340 L 700 450"/>
+ <path class="pipe" d="M 800 268 L 800 450 L 400 450 L 400 300 L 364 300"/>
+ <path class="pipe" d="M 560 450 L 560 466"/>
 
  <!-- 01 котёл -->
- <g class="node"><rect x="98" y="180" width="104" height="120" rx="3"/>
-  <path class="d" d="M116 212h68 M116 232h68 M116 252h44"/><circle class="d hot" cx="170" cy="278" r="5"/></g>
- <!-- 02 насос: центр на оси подающей, корпус перекрывает трубу -->
- <g class="node"><circle cx="292" cy="140" r="22"/><path class="d" d="M292 125 L305 152 L279 152 Z"/></g>
- <!-- 03 коллектор -->
- <g class="node"><rect x="424" y="86" width="172" height="22" rx="11"/>
-  <path class="d" d="M452 108v13 M580 108v13"/></g>
- <!-- 04 радиаторы -->
- <g class="node"><rect x="754" y="190" width="88" height="58" rx="2"/>
-  <path class="d" d="M770 199v40 M788 199v40 M806 199v40 M824 199v40"/></g>
- <!-- 06 расширительный бак на тупиковом отводе -->
- <g class="node"><rect x="620" y="344" width="54" height="60" rx="3"/><path class="d" d="M620 374h54"/></g>
+ <g class="node"><rect x="80" y="210" width="104" height="120" rx="3"/>
+  <path class="d" d="M98 242h68 M98 262h68 M98 282h44"/><circle class="d hot" cx="152" cy="308" r="5"/></g>
+ <!-- 02 группа безопасности: манометр, воздухоотводчик, предохранительный клапан -->
+ <g class="node sg"><path class="pipe" d="M226 150 v-14 M208 136 h36"/>
+  <circle cx="208" cy="128" r="7"/><path class="d" d="M208 128 l4 -4"/>
+  <rect x="223" y="118" width="7" height="14" rx="2"/>
+  <path class="d" d="M244 122 l6 12 l-12 0 Z"/></g>
+ <!-- 03 гидрострелка -->
+ <g class="node"><rect x="330" y="140" width="34" height="170" rx="15"/>
+  <path class="d" d="M338 190 h18 M338 225 h18 M338 260 h18"/></g>
+ <!-- 04 насос радиаторного контура: сидит на разрыве ветки -->
+ <g class="node"><circle cx="560" cy="150" r="18"/>
+  <g class="rotor" data-cx="560" data-cy="150"><path class="d" d="M560 139 L560 150 M569.5 155.5 L560 150 M550.5 155.5 L560 150"/></g></g>
+ <!-- 05 радиаторы -->
+ <g class="node"><rect x="760" y="210" width="88" height="58" rx="2"/>
+  <path class="d" d="M776 219v40 M794 219v40 M812 219v40 M830 219v40"/></g>
+ <!-- 06 узел ТП: трёхходовой смеситель + насос -->
+ <g class="node mix"><path class="d" d="M432 236 L448 236 L440 250 Z M432 264 L448 264 L440 250 Z M454 242 L454 258 L440 250 Z"/></g>
+ <g class="node"><circle cx="440" cy="296" r="16"/>
+  <g class="rotor" data-cx="440" data-cy="296"><path class="d" d="M440 286 L440 296 M448.5 301 L440 296 M431.5 301 L440 296"/></g></g>
+ <!-- 08 расширительный бак на тупиковом отводе обратки -->
+ <g class="node"><rect x="533" y="466" width="54" height="56" rx="6"/><path class="d" d="M533 494h54"/></g>
 
  <g class="glow" aria-hidden="true">
-  <path class="fl fl-hot"  d="M 150 180 L 150 140 L 480 140 L 480 108"/>
-  <path class="fl fl-hot"  d="M 596 97 L 700 97 L 700 204 L 754 204"/>
-  <path class="fl fl-warm" d="M 540 108 L 540 330 L 500 330 L 500 370 L 460 370 L 460 330 L 420 330 L 420 370 L 380 370 L 380 330 L 340 330 L 340 420"/>
-  <path class="fl fl-cold" d="M 754 234 L 700 234 L 700 420 L 150 420 L 150 300"/>
+  <path class="fl fl-hot"  d="M 136 210 L 136 150 L 330 150"/>
+  <path class="fl fl-hot"  d="M 364 150 L 800 150 L 800 210"/>
+  <path class="fl fl-hot"  d="M 440 150 L 440 234"/>
+  <path class="fl fl-warm" d="M 440 266 L 440 410 L 500 410 L 500 370 L 560 370 L 560 410 L 620 410 L 620 370 L 660 370"/>
+  <path class="fl fl-cold" d="M 660 370 L 660 250 L 454 250"/>
+  <path class="fl fl-cold" d="M 660 340 L 700 340 L 700 450"/>
+  <path class="fl fl-cold" d="M 800 268 L 800 450 L 400 450 L 400 300 L 364 300"/>
+  <path class="fl fl-cold" d="M 330 300 L 250 300 L 250 260 L 184 260"/>
  </g>
  <g class="flows">
-  <path class="fl fl-hot"  d="M 150 180 L 150 140 L 480 140 L 480 108"/>
-  <path class="fl fl-hot"  d="M 596 97 L 700 97 L 700 204 L 754 204"/>
-  <path class="fl fl-warm" d="M 540 108 L 540 330 L 500 330 L 500 370 L 460 370 L 460 330 L 420 330 L 420 370 L 380 370 L 380 330 L 340 330 L 340 420"/>
-  <path class="fl fl-cold" d="M 754 234 L 700 234 L 700 420 L 150 420 L 150 300"/>
+  <path class="fl fl-hot"  d="M 136 210 L 136 150 L 330 150"/>
+  <path class="fl fl-hot"  d="M 364 150 L 800 150 L 800 210"/>
+  <path class="fl fl-hot"  d="M 440 150 L 440 234"/>
+  <path class="fl fl-warm" d="M 440 266 L 440 410 L 500 410 L 500 370 L 560 370 L 560 410 L 620 410 L 620 370 L 660 370"/>
+  <path class="fl fl-cold" d="M 660 370 L 660 250 L 454 250"/>
+  <path class="fl fl-cold" d="M 660 340 L 700 340 L 700 450"/>
+  <path class="fl fl-cold" d="M 800 268 L 800 450 L 400 450 L 400 300 L 364 300"/>
+  <path class="fl fl-cold" d="M 330 300 L 250 300 L 250 260 L 184 260"/>
  </g>
 
  <g class="lab">
-  <text x="98"  y="326">01 котёл</text>
-  <text x="248" y="186">02 насос</text>
-  <text x="424" y="72">03 коллектор</text>
-  <text x="676" y="286">04 радиаторы</text>
-  <text x="340" y="398">05 тёплый пол</text>
-  <text x="596" y="336">06 расшир. бак</text>
+  <text x="80"  y="356">01 котёл</text>
+  <text x="176" y="104">02 гр. безопасности</text>
+  <text x="296" y="128">03 гидрострелка</text>
+  <text x="505" y="122">04 насос РК</text>
+  <text x="742" y="294">05 радиаторы</text>
+  <text x="472" y="300">06 узел ТП</text>
+  <text x="470" y="440">07 тёплый пол</text>
+  <text x="508" y="548">08 расшир. бак</text>
  </g>
- <g class="rd">
-  <text x="196" y="126" class="t-hot">T1 <tspan id="t1">78,4</tspan> °C</text>
-  <text x="196" y="446" class="t-cold">T2 <tspan id="t2">54,1</tspan> °C</text>
- </g>
+
+ <g class="tb tb-hot" transform="translate(232 176)"><rect x="-44" y="-15" width="88" height="30" rx="4"/><text x="0" y="6"><tspan id="b1">70,0</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-cold" transform="translate(284 336)"><rect x="-44" y="-15" width="88" height="30" rx="4"/><text x="0" y="6"><tspan id="b2">50,2</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-hot" transform="translate(720 118)"><rect x="-44" y="-15" width="88" height="30" rx="4"/><text x="0" y="6"><tspan id="b3">68,5</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-cold" transform="translate(852 340)"><rect x="-44" y="-15" width="88" height="30" rx="4"/><text x="0" y="6"><tspan id="b4">55,0</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-warm" transform="translate(376 404)"><rect x="-44" y="-15" width="88" height="30" rx="4"/><text x="0" y="6"><tspan id="b5">41,8</tspan>&#8201;&#176;C</text></g>
+
+ <g class="moden"><circle id="modedot" cx="918" cy="65" r="4"/>
+  <text id="mode" x="900" y="70" text-anchor="end">ПРОЕКТНЫЙ РЕЖИМ &#183; &#8722;15 &#176;C</text></g>
 </svg>
     <ul class="leg" aria-label="Обозначения схемы">
       <li><s>01</s>котёл</li><li><s>02</s>насос</li><li><s>03</s>коллектор</li>
@@ -691,44 +724,73 @@ gsap.ticker.add(time=>{
     if(mqW){ mqX+=mqSpeed*0.5; if(mqX>0) mqX-=mqW; mqEl.style.transform='translate3d('+mqX+'px,0,0)'; } }
 });
 
-/* ── схема ───────────────────────────────────────────────────────────────── */
+/* ── схема: автодемонстрация ─────────────────────────────────────────────
+   Схема живёт сама: три режима работы котельной сменяют друг друга,
+   температуры на бейджах плавно пересчитываются, скорость потока и
+   роторов насосов следует за режимом. Значения согласованы по теплотехнике:
+   ΔT радиаторного контура 15 K в проектном режиме, тёплый пол через подмес. */
 function schema(){
-  const pipes=[...document.querySelectorAll('#sys .pipe')];
+  const svg=document.getElementById('sys'); if(!svg) return;
+  const pipes=[...svg.querySelectorAll('.pipe')];
   pipes.forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;});
-  const nodes=[...document.querySelectorAll('#sys .node')],
-        labs=[...document.querySelectorAll('#sys .lab text')],
-        ticks=[...document.querySelectorAll('#sys .ticks path')],
-        rd=[...document.querySelectorAll('#sys .rd text')],
-        fl=[...document.querySelectorAll('#sys .fl')];
+  const nodes=[...svg.querySelectorAll('.node')],
+        labs=[...svg.querySelectorAll('.lab text')],
+        ticks=[...svg.querySelectorAll('.ticks path')],
+        tbs=[...svg.querySelectorAll('.tb')],
+        moden=svg.querySelector('.moden'),
+        fl=[...svg.querySelectorAll('.fl')],
+        rotors=[...svg.querySelectorAll('.rotor')];
+  const modeEl=document.getElementById('mode');
+  /* режим: подача котла · обратка котла · вторичная подача · обратка радиаторов · подача ТП */
+  const SC=[
+    {name:'ПРОЕКТНЫЙ РЕЖИМ · −15 °C', a:70.0,b:50.2,c:68.5,d:55.0,e:41.8, k:1},
+    {name:'МЕЖСЕЗОНЬЕ · +5 °C',              a:55.0,b:44.6,c:53.8,d:46.5,e:34.9, k:.55},
+    {name:'НОЧНОЕ СНИЖЕНИЕ',                            a:45.0,b:38.4,c:44.2,d:40.1,e:29.7, k:.32},
+  ];
+  const cur={a:SC[0].a,b:SC[0].b,c:SC[0].c,d:SC[0].d,e:SC[0].e,k:1};
+  const ids=['b1','b2','b3','b4','b5'].map(i=>document.getElementById(i));
+  const KEYS=['a','b','c','d','e'];
+  const render=t=>{ ids.forEach((el,i)=>{
+    el.textContent=(cur[KEYS[i]]+Math.sin(t*.6+i*1.7)*.14).toFixed(1).replace('.',','); }); };
   gsap.set(nodes,{opacity:0,scale:.94,transformOrigin:'50% 50%'});
-  gsap.set([labs,rd,ticks],{opacity:0});
+  gsap.set([labs,ticks,tbs,moden],{opacity:0});
   const show=()=>{
     pipes.forEach(p=>p.style.strokeDashoffset=0);
-    gsap.set([nodes,labs,rd,ticks],{opacity:1,scale:1});
+    gsap.set([nodes,labs,ticks,tbs,moden],{opacity:1,scale:1});
     gsap.set('#sys .flows .fl',{opacity:.95}); gsap.set('#sys .glow .fl',{opacity:.16});
   };
-  if(reduce){ show(); return; }
+  if(reduce){ show(); render(0); return; }
+  const flow=[];
   const play=()=>{
     gsap.timeline()
       .to(ticks,{opacity:1,duration:.3,stagger:.05})
-      .to(pipes,{strokeDashoffset:0,duration:1.4,stagger:.13,ease:'power2.inOut'},'-=.1')
-      .to(nodes,{opacity:1,scale:1,duration:.45,stagger:.08,ease:'power2.out'},'-=1.0')
-      .to(labs,{opacity:1,duration:.35,stagger:.06},'-=.45')
+      .to(pipes,{strokeDashoffset:0,duration:1.3,stagger:.1,ease:'power2.inOut'},'-=.1')
+      .to(nodes,{opacity:1,scale:1,duration:.45,stagger:.07,ease:'power2.out'},'-=1.0')
+      .to(labs,{opacity:1,duration:.35,stagger:.05},'-=.45')
       .to('#sys .flows .fl',{opacity:.95,duration:.5},'-=.3')
       .to('#sys .glow .fl',{opacity:.16,duration:.5},'<')
-      .to(rd,{opacity:1,duration:.4},'-=.2');
+      .to(tbs,{opacity:1,duration:.4,stagger:.07},'-=.2')
+      .to(moden,{opacity:1,duration:.4},'<');
     fl.forEach((f,i)=>{const L=f.getTotalLength();
-      gsap.to(f,{strokeDashoffset:-L,duration:4.8+i*0.9,repeat:-1,ease:'none'});});
-    const t1=document.getElementById('t1'), t2=document.getElementById('t2');
-    const o1={v:78.4}, o2={v:54.1};
-    gsap.to(o1,{v:80.9,duration:4.5,repeat:-1,yoyo:true,ease:'sine.inOut',
-      onUpdate:()=>t1.textContent=o1.v.toFixed(1).replace('.',',')});
-    gsap.to(o2,{v:55.8,duration:5.7,repeat:-1,yoyo:true,ease:'sine.inOut',
-      onUpdate:()=>t2.textContent=o2.v.toFixed(1).replace('.',',')});
+      flow.push(gsap.to(f,{strokeDashoffset:-L,duration:4.6+(i%4)*0.8,repeat:-1,ease:'none'}));});
+    rotors.forEach(r=>flow.push(gsap.to(r,{rotation:360,
+      svgOrigin:r.dataset.cx+' '+r.dataset.cy,repeat:-1,duration:1.4,ease:'none'})));
+    const t0=performance.now();
+    gsap.ticker.add(()=>render((performance.now()-t0)/1000));
+    let si=0;
+    const next=()=>{
+      si=(si+1)%SC.length; const sc=SC[si];
+      modeEl.textContent=sc.name;
+      gsap.fromTo(modeEl,{opacity:0},{opacity:1,duration:.6});
+      gsap.to(cur,{a:sc.a,b:sc.b,c:sc.c,d:sc.d,e:sc.e,duration:2.6,ease:'power2.inOut'});
+      gsap.to(cur,{k:sc.k,duration:2.2,ease:'power2.inOut',
+        onUpdate:()=>flow.forEach(tw=>tw.timeScale(cur.k))});
+      gsap.delayedCall(8,next);
+    };
+    gsap.delayedCall(8,next);
   };
-  /* схема ниже первого экрана — запускаем, когда доехали */
   const io=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ play(); io.disconnect(); } },{threshold:.25});
-  io.observe(document.getElementById('sys'));
+  io.observe(svg);
 }
 
 /* Счёт от нуля до значения. Само число остаётся в разметке для поиска
