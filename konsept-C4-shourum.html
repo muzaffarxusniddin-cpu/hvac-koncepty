@@ -330,13 +330,11 @@ h1 mark{background:none;color:var(--red)}
 #sys .eq .sludge{fill:#132638;stroke:#8FB4D8;stroke-width:1.4}
 #sys .eq .vent{fill:#132638;stroke:#8FB4D8;stroke-width:1.6}
 #sys .eq .ventc{stroke:#8FB4D8;stroke-width:2.4;stroke-linecap:round}
-#sys .eq .gauge{fill:#132638;stroke:#8FB4D8;stroke-width:1.8}
-#sys .eq .gn{stroke:#E1251B;stroke-width:1.8;stroke-linecap:round}
-#sys .eq .rel{stroke:#8FB4D8;stroke-width:2;fill:none;stroke-linecap:round}
-#sys .eq .relb{fill:#E1251B;stroke:none;opacity:.85}
 #sys .eq .axis{fill:#C7D6E6;stroke:none}
 #sys .eq .rf{stroke:#C43A26;stroke-width:3;opacity:.8}
 #sys .eq .rh{stroke:#8FB4D8;stroke-width:2.6;stroke-linecap:round}
+#sys .eq .coil{stroke:#C43A26;stroke-width:4;fill:none;opacity:.85;
+ stroke-linecap:round;stroke-linejoin:round}
 #sys .eq .mb{fill:#C99A4E;stroke:#E3BA76;stroke-width:1.6}
 #sys .eq .servo{fill:#132638;stroke:#8FB4D8;stroke-width:1.6}
 #sys .eq .mem{stroke:#E3BA76;stroke-width:2;opacity:.8}
@@ -356,14 +354,16 @@ h1 mark{background:none;color:var(--red)}
 #sys .ar-hot{fill:#FF9A72}#sys .ar-warm{fill:#FFC08A}
 #sys .ar-cool{fill:#BBD3E8}#sys .ar-cold{fill:#8FC4F0}
 
-/* выноски позиций */
+/* подписи приборов и выноски позиций */
+#sys .tag{font-family:'HVAC Mono',monospace;font-size:20px;font-weight:700;
+ letter-spacing:.12em;fill:var(--paper)}
 #sys .cal circle{fill:#07090C;stroke:#8FB4D8;stroke-width:1.6}
 #sys .cal text{font-family:'HVAC Mono',monospace;font-size:13px;font-weight:700;
  fill:var(--paper);text-anchor:middle}
 
 /* температурные бейджи */
 #sys .tb rect{fill:rgba(9,15,24,.94);stroke:#2C4F7C;stroke-width:1.2}
-#sys .tb text{font-family:'HVAC Mono',monospace;font-size:17px;font-weight:700;
+#sys .tb text{font-family:'HVAC Mono',monospace;font-size:16px;font-weight:700;
  text-anchor:middle;fill:var(--paper)}
 #sys .tb-hot text{fill:#FF8A6A}
 #sys .tb-cold text{fill:#7FB2E0}
@@ -486,14 +486,11 @@ h1 mark{background:none;color:var(--red)}
     <div class="cap"><span>Система отопления · принципиальная схема</span>
       <em><i></i>контур в работе</em></div>
     <div class="sysbox">
-<svg id="sys" viewBox="0 0 1020 740" fill="none" xmlns="http://www.w3.org/2000/svg"
-     role="img" aria-label="Принципиальная схема котельной: газовый котёл с группой безопасности, гидравлический разделитель, насос радиаторного контура, радиаторы, трёхходовой смесительный узел тёплого пола с насосом и линией подмеса, мембранный расширительный бак на обратке">
+<svg id="sys" viewBox="0 0 1020 700" fill="none" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-label="Принципиальная схема котельной: настенный газовый котёл с нижним подключением, гидравлический разделитель, радиаторный контур с собственным насосом, контур тёплого пола через трёхходовой смеситель с насосом и линией подмеса, мембранный расширительный бак на обратке">
  <defs>
-  <linearGradient id="gWarm" x1="0" y1="0" x2="1" y2="1">
+  <linearGradient id="gWarm" x1="0" y1="0" x2="0" y2="1">
    <stop offset="0%" stop-color="#E8674A"/><stop offset="100%" stop-color="#C98F63"/>
-  </linearGradient>
-  <linearGradient id="gCool" x1="0" y1="0" x2="1" y2="0">
-   <stop offset="0%" stop-color="#8FA9C2"/><stop offset="100%" stop-color="#6E97C4"/>
   </linearGradient>
   <linearGradient id="gGloss" x1="0" y1="0" x2="1" y2="0">
    <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".10"/>
@@ -502,197 +499,181 @@ h1 mark{background:none;color:var(--red)}
  </defs>
 
  <g class="ticks">
-  <path d="M28 34 h22 M28 34 v22"/><path d="M992 34 h-22 M992 34 v22"/>
-  <path d="M28 626 h22 M28 626 v-22"/><path d="M992 626 h-22 M992 626 v-22"/>
+  <path d="M28 26 h22 M28 26 v22"/><path d="M992 26 h-22 M992 26 v22"/>
+  <path d="M28 594 h22 M28 594 v-22"/><path d="M992 594 h-22 M992 594 v-22"/>
  </g>
 
- <g class="case"><path class="cs cs-hot" d="M 178 190 V 145 H 330"/>
- <path class="cs cs-hot" d="M 240 145 V 105 M 200 105 H 280"/>
- <path class="cs cs-hot" d="M 382 145 H 870"/>
- <path class="cs cs-hot" d="M 870 145 V 230"/>
- <path class="cs cs-hot" d="M 480 145 V 258"/>
- <path class="cs cs-warm" d="M 480 298 V 460 H 540 V 415 H 600 V 460 H 660 V 415 H 720 V 460 H 760"/>
- <path class="cs cs-cool" d="M 760 460 V 278 H 500"/>
- <path class="cs cs-cold" d="M 760 380 H 820 V 510"/>
- <path class="cs cs-cold" d="M 925 310 V 510"/>
- <path class="cs cs-cold" d="M 925 510 H 430 V 365 H 382"/>
- <path class="cs cs-cold" d="M 330 365 H 260 V 430 H 105 V 385"/>
- <path class="cs cs-cold" d="M 600 510 V 545"/></g>
- <g class="core"><path class="cr cr-hot" d="M 178 190 V 145 H 330"/>
- <path class="cr cr-hot" d="M 240 145 V 105 M 200 105 H 280"/>
- <path class="cr cr-hot" d="M 382 145 H 870"/>
- <path class="cr cr-hot" d="M 870 145 V 230"/>
- <path class="cr cr-hot" d="M 480 145 V 258"/>
- <path class="cr cr-warm" d="M 480 298 V 460 H 540 V 415 H 600 V 460 H 660 V 415 H 720 V 460 H 760"/>
- <path class="cr cr-cool" d="M 760 460 V 278 H 500"/>
- <path class="cr cr-cold" d="M 760 380 H 820 V 510"/>
- <path class="cr cr-cold" d="M 925 310 V 510"/>
- <path class="cr cr-cold" d="M 925 510 H 430 V 365 H 382"/>
- <path class="cr cr-cold" d="M 330 365 H 260 V 430 H 105 V 385"/>
- <path class="cr cr-cold" d="M 600 510 V 545"/></g>
+ <g class="case"><path class="cs cs-hot" d="M 165 235 V 380 H 265"/>
+ <path class="cs cs-hot" d="M 317 380 H 725"/>
+ <path class="cs cs-hot" d="M 455 380 V 150"/>
+ <path class="cs cs-hot" d="M 725 380 V 318"/>
+ <path class="cs cs-warm" d="M 725 282 V 150"/>
+ <path class="cs cs-cool" d="M 790 300 H 743"/>
+ <path class="cs cs-cold" d="M 520 150 V 368 Q 542 380 520 392 V 450"/>
+ <path class="cs cs-cold" d="M 790 150 V 450"/>
+ <path class="cs cs-cold" d="M 790 450 H 317"/>
+ <path class="cs cs-cold" d="M 265 450 H 105 V 235"/>
+ <path class="cs cs-cold" d="M 180 450 V 505"/></g>
+ <g class="core"><path class="cr cr-hot" d="M 165 235 V 380 H 265"/>
+ <path class="cr cr-hot" d="M 317 380 H 725"/>
+ <path class="cr cr-hot" d="M 455 380 V 150"/>
+ <path class="cr cr-hot" d="M 725 380 V 318"/>
+ <path class="cr cr-warm" d="M 725 282 V 150"/>
+ <path class="cr cr-cool" d="M 790 300 H 743"/>
+ <path class="cr cr-cold" d="M 520 150 V 368 Q 542 380 520 392 V 450"/>
+ <path class="cr cr-cold" d="M 790 150 V 450"/>
+ <path class="cr cr-cold" d="M 790 450 H 317"/>
+ <path class="cr cr-cold" d="M 265 450 H 105 V 235"/>
+ <path class="cr cr-cold" d="M 180 450 V 505"/></g>
 
  
  <g class="eq boiler">
-  <rect x="70" y="190" width="145" height="195" rx="9" class="body"/>
-  <rect x="70" y="190" width="145" height="195" rx="9" class="gloss"/>
-  <!-- теплообменник -->
-  <rect x="84" y="204" width="117" height="54" rx="4" class="hx"/>
-  <path class="hxf" d="M94 212v38 M104 212v38 M114 212v38 M124 212v38 M134 212v38
-                       M144 212v38 M154 212v38 M164 212v38 M174 212v38 M184 212v38"/>
-  <!-- горелка -->
-  <path class="flame" d="M104 276 q6 -12 12 0 q-6 9 -12 0 Z
-                         M124 276 q6 -12 12 0 q-6 9 -12 0 Z
-                         M144 276 q6 -12 12 0 q-6 9 -12 0 Z
-                         M164 276 q6 -12 12 0 q-6 9 -12 0 Z"/>
-  <path class="brn" d="M96 284 h92"/>
-  <!-- встроенный насос и расширительный бак котла -->
-  <circle cx="108" cy="322" r="16" class="ipump"/>
-  <path class="ipimp" d="M108 310 A12 12 0 0 1 120 322 L108 322 Z"/>
-  <rect x="140" y="304" width="62" height="36" rx="4" class="ivessel"/>
-  <path class="ivm" d="M140 322 h62"/>
-  <!-- панель -->
-  <rect x="84" y="356" width="117" height="16" rx="3" class="disp"/>
-  <path class="dispt" d="M92 364 h20 M120 364 h10 M170 364 h22"/>
- </g><g class="cal"><circle cx="52" cy="206" r="13"/><text x="52" y="211">01</text></g>
- 
- <g class="eq sg">
-  <!-- манометр -->
-  <circle cx="200" cy="94" r="11" class="gauge"/>
-  <path class="gn" d="M200 94 L206 87"/>
-  <circle cx="200" cy="94" r="1.8" class="axis"/>
-  <!-- автоматический воздухоотводчик -->
-  <rect x="234" y="82" width="13" height="19" rx="2" class="vent"/>
-  <path class="ventc" d="M232 82 h17"/>
-  <!-- предохранительный клапан -->
-  <path class="rel" d="M268 105 L268 92 L280 92 M274 92 l0 -10 M268 84 h12"/>
-  <path class="relb" d="M262 105 L274 105 L268 96 Z"/>
- </g><g class="cal"><circle cx="306" cy="105" r="13"/><text x="306" y="110">02</text></g>
+  <rect x="60" y="40" width="150" height="195" rx="9" class="body"/>
+  <rect x="60" y="40" width="150" height="195" rx="9" class="gloss"/>
+  <rect x="74" y="54" width="122" height="56" rx="4" class="hx"/>
+  <path class="hxf" d="M84 62v40 M94 62v40 M104 62v40 M114 62v40 M124 62v40
+                       M134 62v40 M144 62v40 M154 62v40 M164 62v40 M174 62v40"/>
+  <path class="flame" d="M96 130 q6 -12 12 0 q-6 9 -12 0 Z
+                         M118 130 q6 -12 12 0 q-6 9 -12 0 Z
+                         M140 130 q6 -12 12 0 q-6 9 -12 0 Z
+                         M162 130 q6 -12 12 0 q-6 9 -12 0 Z"/>
+  <path class="brn" d="M88 138 h94"/>
+  <circle cx="98" cy="176" r="16" class="ipump"/>
+  <path class="ipimp" d="M98 164 A12 12 0 0 1 110 176 L98 176 Z"/>
+  <rect x="132" y="158" width="64" height="36" rx="4" class="ivessel"/>
+  <path class="ivm" d="M132 176 h64"/>
+  <rect x="74" y="206" width="122" height="16" rx="3" class="disp"/>
+  <path class="dispt" d="M82 214 h20 M110 214 h10 M162 214 h22"/>
+ </g><g class="cal"><circle cx="236" cy="62" r="13"/><text x="236" y="67">01</text></g>
  
  <g class="eq sep">
-  <rect x="330" y="110" width="52" height="290" rx="24" class="body"/>
-  <rect x="330" y="110" width="52" height="290" rx="24" class="gloss"/>
-  <path class="mesh" d="M338 190 h36 M338 218 h36 M338 246 h36 M338 274 h36 M338 302 h36"/>
-  <!-- воздухоотводчик сверху -->
-  <path class="pipe-thin" d="M356 110 V 92"/>
-  <rect x="349" y="74" width="14" height="19" rx="2" class="vent"/>
-  <path class="ventc" d="M347 74 h18"/>
-  <!-- грязевик и кран слива снизу -->
-  <path class="pipe-thin" d="M356 400 V 418"/>
-  <path class="sludge" d="M344 418 h24 l-6 14 h-12 Z"/>
+  <rect x="265" y="330" width="52" height="170" rx="24" class="body"/>
+  <rect x="265" y="330" width="52" height="170" rx="24" class="gloss"/>
+  <path class="mesh" d="M273 398 h36 M273 420 h36 M273 442 h36"/>
+  <path class="pipe-thin" d="M291 330 V 312"/>
+  <rect x="284" y="294" width="14" height="19" rx="2" class="vent"/>
+  <path class="ventc" d="M282 294 h18"/>
+  <path class="pipe-thin" d="M291 500 V 516"/>
+  <path class="sludge" d="M279 516 h24 l-6 14 h-12 Z"/>
  </g>
- <g class="eq valve"><path class="vb" d="M 349 433.35 L 349 446.65 L 356 440 Z M 363 433.35 L 363 446.65 L 356 440 Z"/><circle cx="356" cy="440" r="3.2" class="ball"/><path class="lev" d="M 356 440 L 356 425.3"/></g><g class="cal"><circle cx="398" cy="420" r="13"/><text x="398" y="425">03</text></g>
+ <g class="eq valve"><path class="vb" d="M 284.35 539 L 297.65 539 L 291 546 Z M 284.35 553 L 297.65 553 L 291 546 Z"/><circle cx="291" cy="546" r="3.2" class="ball"/><path class="lev" d="M 291 546 L 305.7 546"/></g><g class="cal"><circle cx="226" cy="306" r="13"/><text x="226" y="311">02</text></g>
  
  <g class="eq rad">
-  <rect x="840" y="230" width="112" height="80" rx="4" class="body"/>
-  <path class="rf" d="M854 238v64 M868 238v64 M882 238v64 M896 238v64
-                      M910 238v64 M924 238v64 M938 238v64"/>
-  <path class="rh" d="M846 240 h100 M846 300 h100"/>
- </g><g class="cal"><circle cx="976" cy="270" r="13"/><text x="976" y="275">05</text></g>
+  <rect x="430" y="55" width="115" height="95" rx="4" class="body"/>
+  <path class="rf" d="M444 64v77 M458 64v77 M472 64v77 M486 64v77
+                      M500 64v77 M514 64v77 M528 64v77"/>
+  <path class="rh" d="M436 66 h103 M436 139 h103"/>
+ </g>
+ <text class="tag" x="487" y="34" text-anchor="middle">РО</text><g class="cal"><circle cx="572" cy="96" r="13"/><text x="572" y="101">04</text></g>
+ 
+ <g class="eq flr">
+  <rect x="700" y="55" width="115" height="95" rx="4" class="body"/>
+  <path class="coil" d="M718 136 V 78 a10 10 0 0 1 10 -10 h60 a10 10 0 0 1 10 10
+                        v40 a10 10 0 0 1 -10 10 h-40 a10 10 0 0 1 -10 -10 v-22
+                        a10 10 0 0 1 10 -10 h20"/>
+ </g>
+ <text class="tag" x="757" y="34" text-anchor="middle">ТП</text><g class="cal"><circle cx="842" cy="96" r="13"/><text x="842" y="101">07</text></g>
  
  <g class="eq mix">
-  <path class="mb" d="M465 255 L495 255 L480 274 Z
-                      M465 301 L495 301 L480 282 Z
-                      M502 261 L502 295 L485 278 Z"/>
-  <circle cx="480" cy="278" r="4" class="ball"/>
-  <rect x="470" y="234" width="20" height="14" rx="2" class="servo"/>
-  <path class="pipe-thin" d="M480 248 V 258"/>
- </g><g class="cal"><circle cx="440" cy="250" r="13"/><text x="440" y="255">06</text></g>
+  <path class="mb" d="M710 279 L740 279 L725 297 Z
+                      M710 325 L740 325 L725 306 Z
+                      M747 285 L747 319 L730 302 Z"/>
+  <circle cx="725" cy="302" r="4" class="ball"/>
+  <rect x="680" y="294" width="24" height="16" rx="2" class="servo"/>
+  <path class="pipe-thin" d="M704 302 H 712"/>
+ </g><g class="cal"><circle cx="648" cy="302" r="13"/><text x="648" y="307">05</text></g>
  
  <g class="eq tank">
-  <rect x="568" y="545" width="64" height="70" rx="14" class="body"/>
-  <rect x="568" y="545" width="64" height="70" rx="14" class="gloss"/>
-  <path class="mem" d="M568 578 h64"/>
-  <path class="gas" d="M574 556 h52 M574 564 h52 M574 572 h52"/>
- </g><g class="cal"><circle cx="664" cy="580" r="13"/><text x="664" y="585">08</text></g>
+  <rect x="148" y="505" width="64" height="70" rx="14" class="body"/>
+  <rect x="148" y="505" width="64" height="70" rx="14" class="gloss"/>
+  <path class="mem" d="M148 538 h64"/>
+  <path class="gas" d="M154 516 h52 M154 524 h52 M154 532 h52"/>
+ </g><g class="cal"><circle cx="244" cy="538" r="13"/><text x="244" y="543">08</text></g>
 
  <!-- краны: на каждом отводе, как на объекте -->
- <g class="eq valve"><path class="vb" d="M 291 136.45 L 291 153.55 L 300 145 Z M 309 136.45 L 309 153.55 L 300 145 Z"/><circle cx="300" cy="145" r="4.1" class="ball"/><path class="lev" d="M 300 145 L 300 126.1"/></g>
- <g class="eq valve"><path class="vb" d="M 291 356.45 L 291 373.55 L 300 365 Z M 309 356.45 L 309 373.55 L 300 365 Z"/><circle cx="300" cy="365" r="4.1" class="ball"/><path class="lev" d="M 300 365 L 300 346.1"/></g>
- <g class="eq valve"><path class="vb" d="M 421 136.45 L 421 153.55 L 430 145 Z M 439 136.45 L 439 153.55 L 430 145 Z"/><circle cx="430" cy="145" r="4.1" class="ball"/><path class="lev" d="M 430 145 L 430 126.1"/></g>
- <g class="eq valve"><path class="vb" d="M 761 136.45 L 761 153.55 L 770 145 Z M 779 136.45 L 779 153.55 L 770 145 Z"/><circle cx="770" cy="145" r="4.1" class="ball"/><path class="lev" d="M 770 145 L 770 126.1"/></g>
- <g class="eq valve"><path class="vb" d="M 861.45 191 L 878.55 191 L 870 200 Z M 861.45 209 L 878.55 209 L 870 200 Z"/><circle cx="870" cy="200" r="4.1" class="ball"/><path class="lev" d="M 870 200 L 888.9 200"/></g>
- <g class="eq valve"><path class="vb" d="M 916.45 341 L 933.55 341 L 925 350 Z M 916.45 359 L 933.55 359 L 925 350 Z"/><circle cx="925" cy="350" r="4.1" class="ball"/><path class="lev" d="M 925 350 L 943.9 350"/></g>
- <g class="eq valve"><path class="vb" d="M 471.45 169 L 488.55 169 L 480 178 Z M 471.45 187 L 488.55 187 L 480 178 Z"/><circle cx="480" cy="178" r="4.1" class="ball"/><path class="lev" d="M 480 178 L 498.9 178"/></g>
- <g class="eq valve"><path class="vb" d="M 811.45 431 L 828.55 431 L 820 440 Z M 811.45 449 L 828.55 449 L 820 440 Z"/><circle cx="820" cy="440" r="4.1" class="ball"/><path class="lev" d="M 820 440 L 838.9 440"/></g>
- <g class="eq valve"><path class="vb" d="M 593.35 521 L 606.65 521 L 600 528 Z M 593.35 535 L 606.65 535 L 600 528 Z"/><circle cx="600" cy="528" r="3.2" class="ball"/><path class="lev" d="M 600 528 L 614.7 528"/></g>
+ <g class="eq valve"><path class="vb" d="M 156.45 311 L 173.55 311 L 165 320 Z M 156.45 329 L 173.55 329 L 165 320 Z"/><circle cx="165" cy="320" r="4.1" class="ball"/><path class="lev" d="M 165 320 L 183.9 320"/></g>
+ <g class="eq valve"><path class="vb" d="M 96.45 311 L 113.55 311 L 105 320 Z M 96.45 329 L 113.55 329 L 105 320 Z"/><circle cx="105" cy="320" r="4.1" class="ball"/><path class="lev" d="M 105 320 L 123.9 320"/></g>
+ <g class="eq valve"><path class="vb" d="M 446.45 336 L 463.55 336 L 455 345 Z M 446.45 354 L 463.55 354 L 455 345 Z"/><circle cx="455" cy="345" r="4.1" class="ball"/><path class="lev" d="M 455 345 L 473.9 345"/></g>
+ <g class="eq valve"><path class="vb" d="M 511.45 187 L 528.55 187 L 520 196 Z M 511.45 205 L 528.55 205 L 520 196 Z"/><circle cx="520" cy="196" r="4.1" class="ball"/><path class="lev" d="M 520 196 L 538.9 196"/></g>
+ <g class="eq valve"><path class="vb" d="M 716.45 341 L 733.55 341 L 725 350 Z M 716.45 359 L 733.55 359 L 725 350 Z"/><circle cx="725" cy="350" r="4.1" class="ball"/><path class="lev" d="M 725 350 L 743.9 350"/></g>
+ <g class="eq valve"><path class="vb" d="M 781.45 187 L 798.55 187 L 790 196 Z M 781.45 205 L 798.55 205 L 790 196 Z"/><circle cx="790" cy="196" r="4.1" class="ball"/><path class="lev" d="M 790 196 L 808.9 196"/></g>
+ <g class="eq valve"><path class="vb" d="M 173.35 479 L 186.65 479 L 180 486 Z M 173.35 493 L 186.65 493 L 180 486 Z"/><circle cx="180" cy="486" r="3.2" class="ball"/><path class="lev" d="M 180 486 L 194.7 486"/></g>
 
  
  <g class="eq pump">
-  <rect x="649" y="110" width="23" height="13" rx="2" class="mot"/>
-  <circle cx="660" cy="145" r="22" class="body"/>
-  <circle cx="660" cy="145" r="17" class="inner"/>
-  <g class="rotor" data-cx="660" data-cy="145">
-   <path class="imp" d="M 660 130 A 15 15 0 0 1 675 145
-                        L 660 145 Z"/>
-   <path class="imp2" d="M 660 160 A 15 15 0 0 1 645 145
-                         L 660 145 Z"/>
+  <rect x="473" y="293" width="14" height="14" rx="2" class="mot"/>
+  <circle cx="455" cy="300" r="20" class="body"/>
+  <circle cx="455" cy="300" r="15" class="inner"/>
+  <g class="rotor" data-cx="455" data-cy="300">
+   <path class="imp" d="M 455 287 A 13 13 0 0 1 468 300
+                        L 455 300 Z"/>
+   <path class="imp2" d="M 455 313 A 13 13 0 0 1 442 300
+                         L 455 300 Z"/>
   </g>
-  <circle cx="660" cy="145" r="2.4" class="axis"/>
- </g><g class="cal"><circle cx="660" cy="97" r="13"/><text x="660" y="102">04</text></g>
+  <circle cx="455" cy="300" r="2.4" class="axis"/>
+ </g><g class="cal"><circle cx="412" cy="300" r="13"/><text x="412" y="305">03</text></g>
  
  <g class="eq pump">
-  <rect x="470" y="313" width="20" height="13" rx="2" class="mot"/>
-  <circle cx="480" cy="345" r="19" class="body"/>
-  <circle cx="480" cy="345" r="14" class="inner"/>
-  <g class="rotor" data-cx="480" data-cy="345">
-   <path class="imp" d="M 480 333 A 12 12 0 0 1 492 345
-                        L 480 345 Z"/>
-   <path class="imp2" d="M 480 357 A 12 12 0 0 1 468 345
-                         L 480 345 Z"/>
+  <rect x="743" y="215" width="14" height="14" rx="2" class="mot"/>
+  <circle cx="725" cy="222" r="20" class="body"/>
+  <circle cx="725" cy="222" r="15" class="inner"/>
+  <g class="rotor" data-cx="725" data-cy="222">
+   <path class="imp" d="M 725 209 A 13 13 0 0 1 738 222
+                        L 725 222 Z"/>
+   <path class="imp2" d="M 725 235 A 13 13 0 0 1 712 222
+                         L 725 222 Z"/>
   </g>
-  <circle cx="480" cy="345" r="2.4" class="axis"/>
- </g><g class="cal"><circle cx="480" cy="300" r="13"/><text x="480" y="305"></text></g>
+  <circle cx="725" cy="222" r="2.4" class="axis"/>
+ </g><g class="cal"><circle cx="682" cy="222" r="13"/><text x="682" y="227">06</text></g>
 
- <g class="flows"><path class="fl fl-hot" d="M 178 190 V 145 H 330"/>
- <path class="fl fl-hot" d="M 240 145 V 105 M 200 105 H 280"/>
- <path class="fl fl-hot" d="M 382 145 H 870"/>
- <path class="fl fl-hot" d="M 870 145 V 230"/>
- <path class="fl fl-hot" d="M 480 145 V 258"/>
- <path class="fl fl-warm" d="M 480 298 V 460 H 540 V 415 H 600 V 460 H 660 V 415 H 720 V 460 H 760"/>
- <path class="fl fl-cool" d="M 760 460 V 278 H 500"/>
- <path class="fl fl-cold" d="M 760 380 H 820 V 510"/>
- <path class="fl fl-cold" d="M 925 310 V 510"/>
- <path class="fl fl-cold" d="M 925 510 H 430 V 365 H 382"/>
- <path class="fl fl-cold" d="M 330 365 H 260 V 430 H 105 V 385"/>
- <path class="fl fl-cold" d="M 600 510 V 545"/></g>
+ <g class="flows"><path class="fl fl-hot" d="M 165 235 V 380 H 265"/>
+ <path class="fl fl-hot" d="M 317 380 H 725"/>
+ <path class="fl fl-hot" d="M 455 380 V 150"/>
+ <path class="fl fl-hot" d="M 725 380 V 318"/>
+ <path class="fl fl-warm" d="M 725 282 V 150"/>
+ <path class="fl fl-cool" d="M 790 300 H 743"/>
+ <path class="fl fl-cold" d="M 520 150 V 368 Q 542 380 520 392 V 450"/>
+ <path class="fl fl-cold" d="M 790 150 V 450"/>
+ <path class="fl fl-cold" d="M 790 450 H 317"/>
+ <path class="fl fl-cold" d="M 265 450 H 105 V 235"/>
+ <path class="fl fl-cold" d="M 180 450 V 505"/></g>
 
  <g class="arrows">
-  <path class="ar ar-hot" transform="translate(268 145) rotate(0)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-hot" transform="translate(560 145) rotate(0)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-hot" transform="translate(870 190) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-hot" transform="translate(480 222) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-warm" transform="translate(480 400) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-warm" transform="translate(700 460) rotate(0)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-cool" transform="translate(760 340) rotate(270)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-cool" transform="translate(600 278) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-cold" transform="translate(925 430) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-cold" transform="translate(700 510) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-cold" transform="translate(430 440) rotate(270)" d="M -7 -6 L 7 0 L -7 6 Z"/>
-  <path class="ar ar-cold" transform="translate(180 430) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-hot" transform="translate(165 358) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-hot" transform="translate(232 380) rotate(0)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-hot" transform="translate(388 380) rotate(0)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-hot" transform="translate(636 380) rotate(0)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-hot" transform="translate(455 244) rotate(270)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-warm" transform="translate(725 178) rotate(270)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cold" transform="translate(520 300) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cold" transform="translate(790 244) rotate(90)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cool" transform="translate(766 300) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cold" transform="translate(660 450) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cold" transform="translate(392 450) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cold" transform="translate(212 450) rotate(180)" d="M -7 -6 L 7 0 L -7 6 Z"/>
+  <path class="ar ar-cold" transform="translate(105 300) rotate(270)" d="M -7 -6 L 7 0 L -7 6 Z"/>
  </g>
 
- <g class="cal"><circle cx="640" cy="484" r="13"/><text x="640" y="489">07</text></g>
-
- <g class="tb tb-hot" transform="translate(282 182)"><rect x="-46" y="-15" width="92" height="30" rx="4"/><text x="0" y="6"><tspan id="b1">70,0</tspan>&#8201;&#176;C</text></g>
- <g class="tb tb-cold" transform="translate(278 338)"><rect x="-46" y="-15" width="92" height="30" rx="4"/><text x="0" y="6"><tspan id="b2">50,2</tspan>&#8201;&#176;C</text></g>
- <g class="tb tb-hot" transform="translate(434 106)"><rect x="-46" y="-15" width="92" height="30" rx="4"/><text x="0" y="6"><tspan id="b3">68,5</tspan>&#8201;&#176;C</text></g>
- <g class="tb tb-cold" transform="translate(855 400)"><rect x="-46" y="-15" width="92" height="30" rx="4"/><text x="0" y="6"><tspan id="b4">55,0</tspan>&#8201;&#176;C</text></g>
- <g class="tb tb-warm" transform="translate(560 372)"><rect x="-46" y="-15" width="92" height="30" rx="4"/><text x="0" y="6"><tspan id="b5">41,8</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-hot" transform="translate(216 345)"><rect x="-42" y="-15" width="84" height="30" rx="4"/><text x="0" y="6"><tspan id="b1">70,0</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-cold" transform="translate(186 414)"><rect x="-42" y="-15" width="84" height="30" rx="4"/><text x="0" y="6"><tspan id="b2">50,2</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-hot" transform="translate(390 345)"><rect x="-42" y="-15" width="84" height="30" rx="4"/><text x="0" y="6"><tspan id="b3">68,5</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-cold" transform="translate(640 414)"><rect x="-42" y="-15" width="84" height="30" rx="4"/><text x="0" y="6"><tspan id="b4">55,0</tspan>&#8201;&#176;C</text></g>
+ <g class="tb tb-warm" transform="translate(600 222)"><rect x="-42" y="-15" width="84" height="30" rx="4"/><text x="0" y="6"><tspan id="b5">41,8</tspan>&#8201;&#176;C</text></g>
 
  <g class="moden">
-  <text id="mode" x="962" y="60" text-anchor="end">ПРОЕКТНЫЙ РЕЖИМ &#183; &#8722;15 &#176;C</text>
-  <circle id="modedot" cx="980" cy="55" r="4.5"/>
+  <circle id="modedot" cx="56" cy="27" r="4.5"/>
+  <text id="mode" x="70" y="32">ПРОЕКТНЫЙ РЕЖИМ &#183; &#8722;15 &#176;C</text>
  </g>
 
- <path class="lgsep" d="M44 656 H 976"/>
- <g class="lg"><text x="44" y="682"><tspan class="ln">01</tspan>&#8201;&#8201;Котёл</text></g>
- <g class="lg"><text x="300" y="682"><tspan class="ln">02</tspan>&#8201;&#8201;Группа безопасности</text></g>
- <g class="lg"><text x="566" y="682"><tspan class="ln">03</tspan>&#8201;&#8201;Гидрострелка</text></g>
- <g class="lg"><text x="812" y="682"><tspan class="ln">04</tspan>&#8201;&#8201;Насос радиаторов</text></g>
- <g class="lg"><text x="44" y="712"><tspan class="ln">05</tspan>&#8201;&#8201;Радиаторы</text></g>
- <g class="lg"><text x="300" y="712"><tspan class="ln">06</tspan>&#8201;&#8201;Узел смешения ТП</text></g>
- <g class="lg"><text x="566" y="712"><tspan class="ln">07</tspan>&#8201;&#8201;Тёплый пол</text></g>
- <g class="lg"><text x="812" y="712"><tspan class="ln">08</tspan>&#8201;&#8201;Расширительный бак</text></g>
+ <path class="lgsep" d="M44 620 H 976"/>
+ <g class="lg"><text x="44" y="646"><tspan class="ln">01</tspan>&#8201;&#8201;Котёл</text></g>
+ <g class="lg"><text x="300" y="646"><tspan class="ln">02</tspan>&#8201;&#8201;Гидрострелка</text></g>
+ <g class="lg"><text x="566" y="646"><tspan class="ln">03</tspan>&#8201;&#8201;Насос радиаторов</text></g>
+ <g class="lg"><text x="812" y="646"><tspan class="ln">04</tspan>&#8201;&#8201;Радиаторы</text></g>
+ <g class="lg"><text x="44" y="676"><tspan class="ln">05</tspan>&#8201;&#8201;Узел смешения ТП</text></g>
+ <g class="lg"><text x="300" y="676"><tspan class="ln">06</tspan>&#8201;&#8201;Насос тёплого пола</text></g>
+ <g class="lg"><text x="566" y="676"><tspan class="ln">07</tspan>&#8201;&#8201;Тёплый пол</text></g>
+ <g class="lg"><text x="812" y="676"><tspan class="ln">08</tspan>&#8201;&#8201;Расширительный бак</text></g>
 </svg></div>
   </div>
 </section>
