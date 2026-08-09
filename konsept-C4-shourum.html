@@ -489,8 +489,10 @@ h1 mark{background:none;color:var(--red)}
 <svg id="sys" viewBox="0 0 1020 700" fill="none" xmlns="http://www.w3.org/2000/svg"
      role="img" aria-label="Принципиальная схема котельной: настенный газовый котёл с нижним подключением, гидравлический разделитель, радиаторный контур с собственным насосом, контур тёплого пола через трёхходовой смеситель с насосом и линией подмеса, мембранный расширительный бак на обратке">
  <defs>
-  <linearGradient id="gWarm" x1="0" y1="0" x2="0" y2="1">
-   <stop offset="0%" stop-color="#E8674A"/><stop offset="100%" stop-color="#C98F63"/>
+  <!-- координаты в пространстве чертежа: у вертикальной трассы ширина рамки
+       равна нулю, и градиент в долях рамки для неё просто не рисуется -->
+  <linearGradient id="gWarm" gradientUnits="userSpaceOnUse" x1="725" y1="282" x2="725" y2="150">
+   <stop offset="0%" stop-color="#E8674A"/><stop offset="100%" stop-color="#D3874F"/>
   </linearGradient>
   <linearGradient id="gGloss" x1="0" y1="0" x2="1" y2="0">
    <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".10"/>
